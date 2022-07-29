@@ -139,6 +139,7 @@ a {
 img {
     max-width: auto;
     height: auto;
+    border-radius: 50%;
 }
 
 textarea {
