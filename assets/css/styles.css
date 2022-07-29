@@ -139,7 +139,6 @@ a {
 img {
     max-width: auto;
     height: auto;
-    border-radius: 50%;
 }
 
 textarea {
@@ -488,6 +487,7 @@ textarea {
 .about__buttons {
     display: flex;
     justify-content: center;
+    margin-left: 100px;
 }
 
 
@@ -1028,6 +1028,9 @@ textarea {
         order: 1;
         justify-self: center;
     }
+    .profile-img {
+        border-radius: 50%;
+    }
     .about-wrapper {
         padding-bottom: 1rem;
     }
@@ -1262,6 +1265,9 @@ body {
     }
     .home__scroll-button {
         margin-left: 3rem;
+    }
+    .profile-img {
+        border-radius: 50%;
     }
     .about__container {
         column-gap: 5rem;
