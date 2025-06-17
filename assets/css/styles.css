@@ -34,7 +34,7 @@
     /*========== Font weight ==========*/
     --font-medium: 500;
     --font-semi-bold: 600;
-    /*========== Margenes Bottom ==========*/
+    /*========== Margins Bottom ==========*/
     /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
     --mb-0-25: 0.25rem;
     --mb-0-5: 0.5rem;
@@ -975,6 +975,7 @@ textarea {
     }
     .about__description {
         text-align: justify;
+        width: 1000px;
     }
     .about__info {
         justify-content: space-between;
@@ -1142,10 +1143,12 @@ body {
 .about__img {
     width: 350px;
     float: left;
+    margin-left: -40px;
 }
 
 .about__description {
     text-align: justify;
+    width: 450px;
 }
 
 .about__info {
@@ -1314,6 +1317,7 @@ body {
         padding: 2.5rem 2.5rem;
         grid-template-columns: 1fr max-content;
         column-gap: 3rem;
+        justify-content: center;
     }
     .project__data {
         padding-top: 0.8rem;
