@@ -1254,6 +1254,15 @@ textarea {
         justify-content: center;
         gap: 1rem;
     }
+    
+    .about__description {
+        max-width: 90vw;
+        font-size: 0.95rem;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        line-height: 1.5;
+    }
 }
 
 /* Project Section Styles */
@@ -1351,6 +1360,7 @@ textarea {
 @media screen and (max-width: 900px) {
   .projects__container {
     max-width: 100vw;
+    height: auto;
     padding-left: 0;
     padding-right: 0;
   }
