@@ -798,7 +798,7 @@ textarea {
 }
 
 .footer__title {
-    font-size: var(--h1-font-size);
+    font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-25);
 }
 
@@ -1260,6 +1260,7 @@ textarea {
 .projects__container {
   width: 100%;
   max-width: 1200px;
+  height: auto;
   margin: 0 auto;
   overflow-x: auto;
   padding-bottom: 1rem;
@@ -1272,7 +1273,23 @@ textarea {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 1rem;
-  justify-content: center;
+  justify-content: flex-start; /* Align items to the left for a scroller feel */
+  scrollbar-width: thin;
+  scrollbar-color: var(--first-color) var(--scroll-bar-color);
+}
+
+/* Custom scrollbar for Webkit browsers */
+.projects__scroll::-webkit-scrollbar {
+  height: 10px;
+  background: var(--scroll-bar-color);
+  border-radius: 8px;
+}
+.projects__scroll::-webkit-scrollbar-thumb {
+  background: var(--first-color);
+  border-radius: 8px;
+}
+.projects__scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--first-color-alt);
 }
 .projects .section__title,
 .projects .section__subtitle {
