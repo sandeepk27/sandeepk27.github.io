@@ -1434,13 +1434,24 @@ textarea {
 /* Mobile version: smaller button and icon */
 @media screen and (max-width: 600px) {
     .whatsapp-button {
-        width: 44px;
-        height: 44px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 22px;
+        width: 40px;
+        height: 40px;
+        bottom: 45px;
+        right: 15px;
+        font-size: 0; /* Hide default icon font-size */
+        background-color: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(37, 211, 102, 0.18);
     }
     .whatsapp-icon {
-        font-size: 22px;
+        font-size: 0; /* Hide default icon */
+        width: 24px;
+        height: 24px;
+        background: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.693 4.607 1.889 6.527L4 29l7.527-1.889A12.97 12.97 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.957 0-3.822-.508-5.432-1.393l-.386-.217-4.47 1.12 1.12-4.47-.217-.386A9.96 9.96 0 0 1 6 15c0-5.514 4.486-10 10-10s10 4.486 10 10-4.486 10-10 10zm5.07-7.43c-.276-.138-1.632-.805-1.885-.897-.253-.092-.437-.138-.622.138-.184.276-.713.897-.874 1.083-.161.184-.322.207-.598.069-.276-.138-1.165-.429-2.22-1.366-.82-.731-1.374-1.634-1.536-1.91-.161-.276-.017-.425.121-.563.124-.123.276-.322.414-.483.138-.161.184-.276.276-.46.092-.184.046-.345-.023-.483-.069-.138-.622-1.504-.852-2.057-.225-.541-.454-.468-.622-.477l-.53-.009c-.161 0-.46.069-.701.345-.241.276-.92.899-.92 2.192s.942 2.541 1.073 2.718c.131.177 1.853 2.834 4.494 3.853.629.217 1.119.346 1.501.443.63.16 1.204.137 1.658.083.506-.062 1.632-.667 1.864-1.312.23-.645.23-1.198.161-1.312-.069-.115-.253-.184-.529-.322z"/></svg>') no-repeat center center;
+        background-size: contain;
+        margin: 0;
+        display: block;
     }
 }
