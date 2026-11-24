@@ -2931,3 +2931,10 @@ main, main section, .container, .grid { min-width:0; }
     flex-direction: column;
     justify-content: center;
 }
+
+/* Keep the hero category label visible even before entrance animations run. */
+.home__data > .home__eyebrow {
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+}
