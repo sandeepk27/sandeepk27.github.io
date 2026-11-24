@@ -2833,3 +2833,47 @@ main, main section, .container, .grid { min-width:0; }
         margin-inline: auto;
     }
 }
+
+/* Compact cloud capability cards keep all three providers visible side by side. */
+.dp__clouds {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .7rem;
+    margin-top: .8rem;
+}
+.dp__cloud {
+    min-width: 0;
+    padding: .8rem .9rem;
+    border-radius: .9rem;
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.dp__cloud:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--cloud-accent, var(--first-color)) 38%, transparent);
+    box-shadow: var(--surface-raised), 0 8px 24px color-mix(in srgb, var(--cloud-accent, var(--first-color)) 13%, transparent);
+}
+.dp__cloud--gcp { --cloud-accent: #6b8cff; }
+.dp__cloud--aws { --cloud-accent: #e8a849; }
+.dp__cloud--azure { --cloud-accent: #48a7d8; }
+.dp__cloud-heading { display: flex; align-items: center; gap: .5rem; }
+.dp__cloud-heading i { color: var(--cloud-accent); font-size: 1.05rem; }
+.dp__cloud-label { color: var(--title-color); font-size: .62rem; letter-spacing: .11em; }
+.dp__cloud-services { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .55rem; }
+.dp__cloud-services span {
+    padding: .27rem .45rem;
+    border: 1px solid color-mix(in srgb, var(--cloud-accent) 20%, transparent);
+    border-radius: 99px;
+    background: color-mix(in srgb, var(--cloud-accent) 7%, var(--body-color));
+    color: var(--text-color);
+    font-size: .61rem;
+    line-height: 1.3;
+}
+.dp__stack-card { padding: .9rem; }
+.dp__stack-card .dp__step { margin-bottom: .55rem; font-size: .56rem; }
+.dp__stack-card .dp__title { margin-bottom: .35rem; font-size: 1rem; }
+.dp__stack-card .dp__text { font-size: .75rem; line-height: 1.55; }
+@media screen and (min-width: 1120px) {
+    .dp__stack { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .7rem; }
+}
+@media screen and (max-width: 620px) {
+    .dp__clouds { grid-template-columns: minmax(0, 1fr); }
+}

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="assets/css/styles.css?v=20261124-studio-center">
+    <link rel="stylesheet" href="assets/css/styles.css?v=20261124-data-stack">
 
     <title>Sandeep Kaparthi | Data Engineer · Spark, Airflow &amp; Cloud</title>
     <meta name="description" content="Sandeep Kaparthi is a Data Engineer in Hyderabad with 4.5 years of experience across Spark, Kafka, Airflow, dbt, BigQuery and multi-cloud data platforms.">
@@ -547,9 +547,18 @@
                     </article>
                 </div>
                 <div class="dp__clouds" aria-label="Cloud platform services">
-                    <article class="dp__cloud"><span class="dp__cloud-label">GOOGLE CLOUD</span><p>BigQuery · Cloud Storage · Pub/Sub · Dataproc · Composer</p></article>
-                    <article class="dp__cloud"><span class="dp__cloud-label">AWS</span><p>S3 · Lambda · DynamoDB · cloud data workflows</p></article>
-                    <article class="dp__cloud"><span class="dp__cloud-label">AZURE</span><p>Data Factory · Databricks · Synapse Analytics</p></article>
+                    <article class="dp__cloud dp__cloud--gcp">
+                        <div class="dp__cloud-heading"><i class="uil uil-cloud-database" aria-hidden="true"></i><span class="dp__cloud-label">GOOGLE CLOUD</span></div>
+                        <div class="dp__cloud-services"><span>BigQuery</span><span>Cloud Storage</span><span>Pub/Sub</span><span>Dataproc</span><span>Composer</span></div>
+                    </article>
+                    <article class="dp__cloud dp__cloud--aws">
+                        <div class="dp__cloud-heading"><i class="uil uil-cloud" aria-hidden="true"></i><span class="dp__cloud-label">AWS</span></div>
+                        <div class="dp__cloud-services"><span>S3</span><span>Lambda</span><span>DynamoDB</span><span>Cloud workflows</span></div>
+                    </article>
+                    <article class="dp__cloud dp__cloud--azure">
+                        <div class="dp__cloud-heading"><i class="uil uil-server-network" aria-hidden="true"></i><span class="dp__cloud-label">AZURE</span></div>
+                        <div class="dp__cloud-services"><span>Data Factory</span><span>Databricks</span><span>Synapse Analytics</span></div>
+                    </article>
                 </div>
             </div>
         </section>
