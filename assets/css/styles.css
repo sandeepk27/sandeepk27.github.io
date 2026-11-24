@@ -1518,6 +1518,11 @@ body.dark-theme {
     padding-top: 5rem;
 }
 
+/* The sticky header already occupies page space, so keep the hero close beneath it. */
+.home.section {
+    padding-top: 1.5rem;
+}
+
 .section__title {
     font-size: clamp(1.7rem, 3vw, 2.25rem);
     letter-spacing: -0.045em;
@@ -1575,8 +1580,8 @@ body.dark-theme {
 .home__container {
     max-width: 1080px;
     min-height: min(760px, calc(100svh - 5rem));
-    align-content: center;
-    padding-top: 3rem;
+    align-content: start;
+    padding-top: 1.5rem;
     padding-bottom: 2rem;
 }
 
@@ -2797,4 +2802,18 @@ main, main section, .container, .grid { min-width:0; }
     .nav__link { min-height:2.1rem; padding:.4rem .32rem; font-size:.67rem; letter-spacing:-.01em; }
     .nav__btns { gap:.35rem; }
     .change-theme { width:2.2rem; height:2.2rem; }
+}
+
+/* Keep the first hero content close to the in-flow header on every viewport. */
+.home.section {
+    margin-block-start: 0;
+    padding-block-start: clamp(.75rem, 2vw, 1.5rem);
+}
+.home.section .home__container {
+    min-height: auto;
+    align-content: start;
+    padding-block-start: 0;
+}
+.home.section .home__content {
+    padding-block-start: 0;
 }
