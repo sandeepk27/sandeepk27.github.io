@@ -2877,3 +2877,47 @@ main, main section, .container, .grid { min-width:0; }
 @media screen and (max-width: 620px) {
     .dp__clouds { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Compact project carousel: show several small previews and hint at horizontal scrolling. */
+.projects__container { overflow: visible; }
+.projects__scroll {
+    display: flex;
+    gap: .9rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: .65rem .75rem 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: .75rem;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--first-color) color-mix(in srgb, var(--body-color) 70%, var(--title-color));
+}
+.projects__scroll:focus-visible { outline: 2px solid var(--first-color); outline-offset: 3px; border-radius: 1rem; }
+.projects__scroll::-webkit-scrollbar { height: 6px; }
+.project__card {
+    flex: 0 0 260px;
+    min-width: 0;
+    max-width: 260px;
+    scroll-snap-align: start;
+    border-color: var(--surface-edge);
+    border-radius: 1.1rem;
+}
+.project__img { height: 132px; }
+.project__content { padding: .95rem; }
+.projects .project__title { margin-bottom: .45rem; font-size: 1rem; }
+.project__desc {
+    display: -webkit-box;
+    overflow: hidden;
+    min-height: 0;
+    margin-bottom: .8rem;
+    font-size: .76rem;
+    line-height: 1.55;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.project__button { min-height: 2.5rem; padding: .65rem .85rem; font-size: .76rem; }
+@media screen and (max-width: 767px) {
+    .project__card { flex-basis: min(76vw, 270px); max-width: min(76vw, 270px); }
+    .project__img { height: 118px; }
+}
