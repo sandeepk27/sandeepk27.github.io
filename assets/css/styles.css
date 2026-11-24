@@ -2817,3 +2817,19 @@ main, main section, .container, .grid { min-width:0; }
 .home.section .home__content {
     padding-block-start: 0;
 }
+
+/* Center the Studio feature card within the visible section on desktop screens. */
+@media screen and (min-width: 768px) {
+    .studio.section {
+        display: grid;
+        min-height: calc(100svh - 4.5rem);
+        box-sizing: border-box;
+        align-items: center;
+        padding-block: clamp(1rem, 3vh, 2rem);
+    }
+
+    .studio.section .studio__card {
+        width: min(calc(100% - 2rem), 960px);
+        margin-inline: auto;
+    }
+}
