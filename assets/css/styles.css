@@ -2921,3 +2921,13 @@ main, main section, .container, .grid { min-width:0; }
     .project__card { flex-basis: min(76vw, 270px); max-width: min(76vw, 270px); }
     .project__img { height: 118px; }
 }
+
+/* Give the Data stack its own screen so the Projects section begins after it. */
+.dataprojects.section {
+    display: flex;
+    min-height: 100vh;
+    min-height: 100svh;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+}
