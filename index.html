@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--==================== UNICONS ====================-->
+    <link rel="preconnect" href="https://unicons.iconscout.com" crossorigin>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <!--==================== SWIPER CSS ====================-->
@@ -14,26 +15,31 @@
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <title>Sandeep Kumar</title>
+    <title>Sandeep Kaparthi | Data Engineer · Spark, Airflow &amp; Cloud</title>
+    <meta name="description" content="Sandeep Kaparthi is a Data Engineer in Hyderabad with 4.5 years of experience across Spark, Kafka, Airflow, dbt, BigQuery and multi-cloud data platforms.">
+    <link rel="canonical" href="https://sandeepk27.github.io/">
+    <meta name="theme-color" content="#f1f2f8">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 
 <!-- ✅ Open Graph Meta Tags for Link Preview -->
-  <meta property="og:title" content="Sandeep Kaparthi's Portfolio" />
-  <meta property="og:description" content="Data Engineer" />
-  <meta property="og:image" content="https://sandeepk27.github.io/assets/img/profile1.jpg" />
+  <meta property="og:title" content="Sandeep Kaparthi | Data Engineer" />
+  <meta property="og:description" content="Data engineering across Spark, Kafka, Airflow, dbt, BigQuery and multi-cloud platforms." />
+  <meta property="og:image" content="https://sandeepk27.github.io/assets/img/profile.webp" />
   <meta property="og:url" content="https://sandeepk27.github.io/" />
   <meta property="og:type" content="website" />
 </head>
 
 <body>
     <!--==================== HEADER ====================-->
+    <!-- Site navigation stays in document flow and sticks at the top while scrolling. -->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">Sandeep Kaparthi</a>
 
 
 
-            <div class="nav__menu" id="nav-menu">
+                <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">
@@ -56,6 +62,16 @@
                         </a>
                     </li>
                     <li class="nav__item">
+                        <a href="#studio" class="nav__link">
+                            <i class="uil uil-lightbulb-alt nav__icon"></i> Studio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#data-projects" class="nav__link">
+                            <i class="uil uil-database nav__icon"></i> Data
+                        </a>
+                    </li>
+                    <li class="nav__item">
                         <a href="#projects" class="nav__link">
                             <i class="uil uil-file-alt nav__icon"></i> Projects
                         </a>
@@ -73,7 +89,7 @@
                 <!-- Theme change button -->
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
 
-                <div class="nav__toggle" id="nav-toggle">
+                <div class="nav__toggle" id="nav-toggle" role="button" tabindex="0" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
                     <i class="uil uil-apps"></i>
                 </div>
             </div>
@@ -83,6 +99,7 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
+        <!-- Hero: introduce the data engineering focus and the tools behind it. -->
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content grid">
@@ -95,17 +112,30 @@
                         </a>
                     </div>
                     <div class="home__data">
-                        <h1 class="home__title">Hi <img src="https://raw.githubusercontent.com/nixin72/nixin72/master/wave.gif" alt="hi gif" height="45" width="45" />, I'm Sandeep</h1>
-                        <h3 class="home__subtitle">Data Engineer</h3>
-                        <p class="home__description">A Passionate Developer From India 🇮🇳</p>
-                        <a href="#contact" class="button button--flex">
-                            Contact<i class="uil uil-message button__icon"></i>
-                        </a>
+                        <p class="home__eyebrow"><span class="home__eyebrow-dot"></span> DATA ENGINEERING · MULTI-CLOUD SYSTEMS</p>
+                        <h1 class="home__title">Turning complex data into <span>clear decisions.</span></h1>
+                        <h2 class="home__subtitle">Hi, I'm Sandeep — Senior Data Engineer · Spark · Airflow · BigQuery</h2>
+                        <p class="home__description">I build dependable data platforms and pipelines that help teams move faster, make confident decisions, and scale without the chaos.</p>
+                        <div class="home__actions">
+                            <a href="#data-projects" class="button button--flex">
+                                Explore my work<i class="uil uil-arrow-down button__icon"></i>
+                            </a>
+                            <a href="#contact" class="home__secondary-link">
+                                Let's talk<i class="uil uil-arrow-up-right button__icon"></i>
+                            </a>
+                        </div>
+                        <div class="home__proof">
+                            <div><strong>30 TB+</strong><span>data processed</span></div>
+                            <div><strong>35%</strong><span>faster queries</span></div>
+                            <div><strong>4.5 yrs</strong><span>building at scale</span></div>
+                        </div>
                     </div>
                     <div class="home__img">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="about-wrapper image">
-                                <img class="profile-img" height="auto" width="300px" src="assets/img/profile.png" alt="Profile Image" />
+                        <div class="home__portrait">
+                            <img class="profile-img" src="assets/img/profile.webp" alt="Sandeep Kaparthi, data engineer" />
+                            <div class="home__portrait-caption">
+                                <span class="home__portrait-icon"><i class="uil uil-database"></i></span>
+                                <span><strong>Data, built to scale</strong><small>From raw events to real impact</small></span>
                             </div>
                         </div>
                     </div>
@@ -121,19 +151,41 @@
         </section>
 
         <!--==================== ABOUT ====================-->
+        <!-- About: responsive profile, summary and custom data systems illustration. -->
         <section class="about section" id="about">
             <h2 class="section__title">About me</h2>
             <span class="section__subtitle">Brief Summary</span>
             <div class="about__container container grid">
-                <img src="assets/img//about2.png" alt="" class="about__img">
+                <figure class="about__visual" aria-labelledby="about-visual-caption">
+                    <div class="about__visual-art" aria-hidden="true">
+                        <div class="about__visual-grid"></div>
+                        <div class="about__visual-label"><span>FIELD NOTES <b>01</b></span><span>GCP · DATA SYSTEMS</span></div>
+                        <svg class="about__visual-paths" viewBox="0 0 360 360" fill="none">
+                            <circle cx="180" cy="180" r="112" />
+                            <circle cx="180" cy="180" r="78" />
+                            <path d="M180 180 85 113M180 180l111-45M180 180l-73 104M180 180l102 87" />
+                            <circle cx="85" cy="113" r="5" /><circle cx="291" cy="135" r="5" />
+                            <circle cx="107" cy="284" r="5" /><circle cx="282" cy="267" r="5" />
+                        </svg>
+                        <div class="about__visual-orbit"></div>
+                        <div class="about__visual-core"><i class="uil uil-database"></i><strong>DATA</strong><small>to decisions</small></div>
+                        <div class="about__visual-chip about__visual-chip--query"><i class="uil uil-chart-line"></i><span>BigQuery</span></div>
+                        <div class="about__visual-chip about__visual-chip--spark"><i class="uil uil-bolt"></i><span>Apache Spark</span></div>
+                        <div class="about__visual-chip about__visual-chip--flow"><i class="uil uil-refresh"></i><span>Airflow</span></div>
+                        <div class="about__visual-stat"><strong>30 TB+</strong><span>data processed</span></div>
+                        <span class="about__visual-sparkle about__visual-sparkle--one">✳</span>
+                        <span class="about__visual-sparkle about__visual-sparkle--two">✳</span>
+                    </div>
+                    <figcaption id="about-visual-caption">Reliable pipelines. Clearer decisions.</figcaption>
+                </figure>
                 <div class="about__data">
                     <p class="about__description">
-                        &nbsp;I'm a Data Engineer with 4 years of experience building scalable, production-grade data platforms on Google Cloud Platform. I design distributed ETL pipelines with PySpark, Spark SQL, and Apache Airflow, including batch workloads processing more than 30 TB of data. My work has improved query performance by 35%, strengthened data quality by around 30%, and contributed to over $150K in customer savings. I'm also Google Cloud certified in data engineering, DevOps, cloud architecture, database engineering, and generative AI.
+        I'm a Data Engineer with 4.5 years of experience building scalable batch and streaming data platforms. I work across PySpark, Spark SQL, Kafka, Airflow, dbt and cloud services, including Google Cloud (BigQuery, Pub/Sub, Dataproc, Cloud Storage and Composer), AWS and Azure. My work includes pipelines processing more than 30 TB of data, query improvements of 35%, data quality improvements of around 30% and over $150K in customer savings. I hold Google Cloud certifications in data engineering, DevOps, cloud architecture, database engineering and generative AI.
                     </p>
                     <div class="about__info">
                         <div>
-                            <span class="about__info-title">04+</span>
-                            <span class="about__info-name">years <br>of Experience</span>
+                            <span class="about__info-title">4.5</span>
+                            <span class="about__info-name">years of<br>experience</span>
                         </div>
                         <div>
                             <span class="about__info-title">10+</span>
@@ -150,17 +202,18 @@
         </section>
 
         <!--==================== SKILLS ====================-->
+        <!-- Skills: each category starts collapsed and opens on click or keyboard activation. -->
         <section class="skills section" id="skills">
             <h2 class="section__title">Skills</h2>
             <span class="section__subtitle">Technologies, certifications & awards</span>
             <div class="skills__container container grid">
                 <div>
                     <!-- Programming Languages -->
-                    <div class="skills__content skills__open">
+                    <div class="skills__content skills__close">
                         <div class="skills__header">
                             <i class="uil uil-brackets-curly skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Programming Languages</h1>
+                                <h3 class="skills__title">Programming Languages</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -176,7 +229,7 @@
                         <div class="skills__header">
                             <i class="uil uil-server-network skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Data Processing & Frameworks</h1>
+                                <h3 class="skills__title">Data Processing & Frameworks</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -196,7 +249,7 @@
                         <div class="skills__header">
                             <i class="uil uil-cloud-computing skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Google Cloud Platform</h1>
+                                <h3 class="skills__title">Google Cloud Platform</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -223,7 +276,7 @@
                         <div class="skills__header">
                             <i class="uil uil-cloud skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Amazon Web Services</h1>
+                                <h3 class="skills__title">Amazon Web Services</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -241,7 +294,7 @@
                         <div class="skills__header">
                             <i class="uil uil-cloud skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Microsoft Azure</h1>
+                                <h3 class="skills__title">Microsoft Azure</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -257,7 +310,7 @@
                         <div class="skills__header">
                             <i class="uil uil-swatchbook skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">ETL & Orchestration</h1>
+                                <h3 class="skills__title">ETL & Orchestration</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -273,7 +326,7 @@
                         <div class="skills__header">
                             <i class="uil uil-award skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Certifications</h1>
+                                <h3 class="skills__title">Certifications</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -294,7 +347,7 @@
                         <div class="skills__header">
                             <i class="uil uil-database skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Databases</h1>
+                                <h3 class="skills__title">Databases</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -310,7 +363,7 @@
                         <div class="skills__header">
                             <i class="uil uil-brain skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">AI & Development</h1>
+                                <h3 class="skills__title">AI & Development</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -330,7 +383,7 @@
                         <div class="skills__header">
                             <i class="uil uil-trophy skills__icon"></i>
                             <div>
-                                <h1 class="skills__title">Awards</h1>
+                                <h3 class="skills__title">Awards</h3>
                                 <span class="skills__subtitle"></span>
                             </div>
                             <i class="uil uil-angle-down skills__arrow"></i>
@@ -345,6 +398,7 @@
         </section>
 
         <!--==================== QUALIFICATION ====================-->
+        <!-- Experience and education timeline. -->
         <section class="qualification section" id="qualification">
             <h2 class="section__title">Experience</h2>
             <span class="section__subtitle">My Journey</span>
@@ -445,65 +499,181 @@
         </section>
 
         <!--==================== PROJECTS ====================-->
+        <!--==================== FREELANCE STUDIO ====================-->
+        <!-- Freelance Studio: keep this section centered in the page flow and responsive. -->
+        <section class="studio section" id="studio" aria-labelledby="studio-title">
+            <div class="studio__card container">
+                <div class="studio__orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div class="studio__content">
+                    <p class="studio__eyebrow"><span class="home__eyebrow-dot"></span> INDEPENDENT FREELANCE PRACTICE</p>
+                    <h2 class="studio__title" id="studio-title">SK Origin Studio</h2>
+                    <p class="studio__description">Alongside my data engineering work, I take on select freelance projects through SK Origin Studio. I help small businesses and teams shape clear, polished digital experiences and practical automation that makes everyday work easier.</p>
+                    <div class="studio__services" aria-label="Freelance services">
+                        <span><i class="uil uil-browser"></i> Websites &amp; landing pages</span>
+                        <span><i class="uil uil-process"></i> Workflow automation</span>
+                        <span><i class="uil uil-search"></i> SEO foundations</span>
+                    </div>
+                    <a class="button button--flex" href="#contact">Discuss a project <i class="uil uil-arrow-up-right button__icon"></i></a>
+                </div>
+                <div class="studio__badge" aria-hidden="true"><span>SK</span><small>ORIGIN<br>STUDIO</small></div>
+            </div>
+        </section>
+
+        <!-- Data engineering stack: show the complete toolchain across clouds and platforms. -->
+        <section class="dataprojects section" id="data-projects">
+            <h2 class="section__title">Data Engineering Stack</h2>
+            <span class="section__subtitle">Tools for reliable batch, streaming and analytics</span>
+            <div class="container">
+                <div class="dp__stack" aria-label="Data engineering pipeline stages">
+                    <article class="dp__card dp__stack-card">
+                        <span class="dp__step">01 / INGEST</span><i class="uil uil-import dp__stage-icon" aria-hidden="true"></i>
+                        <h3 class="dp__title">Capture</h3><p class="dp__text">Kafka, Pub/Sub, APIs, files and change data capture.</p>
+                    </article>
+                    <article class="dp__card dp__stack-card">
+                        <span class="dp__step">02 / PROCESS</span><i class="uil uil-process dp__stage-icon" aria-hidden="true"></i>
+                        <h3 class="dp__title">Process</h3><p class="dp__text">Apache Spark, PySpark, Spark SQL and Structured Streaming.</p>
+                    </article>
+                    <article class="dp__card dp__stack-card">
+                        <span class="dp__step">03 / ORCHESTRATE</span><i class="uil uil-schedule dp__stage-icon" aria-hidden="true"></i>
+                        <h3 class="dp__title">Orchestrate</h3><p class="dp__text">Apache Airflow, Cloud Composer and Control-M.</p>
+                    </article>
+                    <article class="dp__card dp__stack-card">
+                        <span class="dp__step">04 / MODEL</span><i class="uil uil-database dp__stage-icon" aria-hidden="true"></i>
+                        <h3 class="dp__title">Store &amp; model</h3><p class="dp__text">BigQuery, Delta Lake, Snowflake, PostgreSQL and dbt.</p>
+                    </article>
+                    <article class="dp__card dp__stack-card">
+                        <span class="dp__step">05 / TRUST</span><i class="uil uil-shield-check dp__stage-icon" aria-hidden="true"></i>
+                        <h3 class="dp__title">Validate &amp; serve</h3><p class="dp__text">Data quality, monitoring, analytics and ML-ready datasets.</p>
+                    </article>
+                </div>
+                <div class="dp__clouds" aria-label="Cloud platform services">
+                    <article class="dp__cloud"><span class="dp__cloud-label">GOOGLE CLOUD</span><p>BigQuery · Cloud Storage · Pub/Sub · Dataproc · Composer</p></article>
+                    <article class="dp__cloud"><span class="dp__cloud-label">AWS</span><p>S3 · Lambda · DynamoDB · cloud data workflows</p></article>
+                    <article class="dp__cloud"><span class="dp__cloud-label">AZURE</span><p>Data Factory · Databricks · Synapse Analytics</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Completed personal projects: these cards link to working demos. -->
         <section class="projects section" id="projects">
             <h2 class="section__title">Projects</h2>
-            <span class="section__subtitle">Some of my work</span>
+            <span class="section__subtitle">Selected work and engineering build ideas</span>
+            <div class="project__featured container">
+                <div class="project__featured-copy">
+                    <span class="project__status"><i class="uil uil-book-open"></i> PUBLISHED ENGINEERING NOTES</span>
+                    <h3>Real-Time ETL with Spark &amp; Delta</h3>
+                    <p>Streaming ingestion, CDC upserts, data quality, exactly-once patterns and real-time KPIs across a Bronze–Silver–Gold pipeline.</p>
+                </div>
+                <a class="button button--flex" href="https://dev.to/sandeepk27/day-29-building-a-production-grade-real-time-etl-pipeline-with-spark-delta-4blc" target="_blank" rel="noopener noreferrer">Read the build notes <i class="uil uil-arrow-up-right button__icon"></i></a>
+            </div>
+            <!-- External inspiration is identified as a reference, not as Sandeep's own project. -->
+            <aside class="project__reference container" aria-label="Open source project reference">
+                <div class="project__reference-icon"><i class="uil uil-github"></i></div>
+                <div class="project__reference-copy">
+                    <span class="project__status">GITHUB REFERENCE</span>
+                    <h3>Data Engineering Zoomcamp</h3>
+                    <p>Use this open-source end-to-end curriculum as a reference for a distinct portfolio build across ingestion, orchestration, warehousing, Spark and Kafka.</p>
+                </div>
+                <a class="project__reference-link" href="https://github.com/DataTalksClub/data-engineering-zoomcamp" target="_blank" rel="noopener noreferrer">Explore the repository <i class="uil uil-arrow-up-right"></i></a>
+            </aside>
             <div class="projects__container">
                 <div class="projects__scroll">
-                    <!-- Project Card 1 -->
+                    <!-- Existing portfolio demos from the public GitHub Pages profile. -->
                     <div class="project__card">
-                        <img src="assets/img/project1.png" alt="Project 1" class="project__img">
+                        <img loading="lazy" decoding="async" src="assets/img/project1.webp" alt="Weather dashboard preview" class="project__img">
                         <div class="project__content">
                             <h3 class="project__title">Weather Dashboard</h3>
                             <p class="project__desc">A responsive weather dashboard that fetches real-time weather data using Open Weather API. Users can search for any city to view current conditions, temperature, humidity, and more — all in a visually intuitive layout.</p>
                             <a href="https://sandeepk27.github.io/Weather-Dashboard/" target="_blank" class="button button--flex project__button">View Details <i class="uil uil-arrow-right button__icon"></i></a>
                         </div>
                     </div>
-                    <!-- Project Card 2 -->
                     <div class="project__card">
-                        <img src="assets/img/project2.png" alt="Project 2" class="project__img">
+                        <img loading="lazy" decoding="async" src="assets/img/project2.webp" alt="Music player preview" class="project__img">
                         <div class="project__content">
                             <h3 class="project__title">Music Player</h3>
                             <p class="project__desc">A sleek and intuitive music player application designed with basic UI. Developed with user-friendly features, modern interface and functionality.</p>
                             <a href="https://sandeepk27.github.io/music-player/" target="_blank" class="button button--flex project__button">View Details <i class="uil uil-arrow-right button__icon"></i></a>
                         </div>
                     </div>
-                    <!-- Project Card 3 -->
                     <div class="project__card">
-                        <img src="assets/img/project3.png" alt="Project 3" class="project__img">
+                        <img loading="lazy" decoding="async" src="assets/img/project3.png" alt="SIP calculator preview" class="project__img">
                         <div class="project__content">
                             <h3 class="project__title">SIP Calculator</h3>
                             <p class="project__desc">A lightweight and interactive SIP calculator to help users estimate their investment growth over time. No backend needed — just a fast, fully client-side tool for quick financial planning!</p>
-                            <a href="https://sandeepk27.github.io/Weather-Dashboard/" target="_blank" class="button button--flex project__button">View Details <i class="uil uil-arrow-right button__icon"></i></a>
+                            <a href="https://github.com/sandeepk27?tab=repositories" target="_blank" rel="noopener noreferrer" class="button button--flex project__button">Find on GitHub <i class="uil uil-arrow-right button__icon"></i></a>
                         </div>
                     </div>
-                    <!-- Project Card 4 -->
                     <div class="project__card">
-                        <img src="assets/img/project4.png" alt="Project 4" class="project__img">
+                        <img loading="lazy" decoding="async" src="assets/img/project4.webp" alt="Movie Buzz preview" class="project__img">
                         <div class="project__content">
                             <h3 class="project__title">Movie Buzz</h3>
                             <p class="project__desc">A lightweight web app that delivers instant movie ratings and brief descriptions to help users decide what to watch next. Built for speed and simplicity, MovieBuzz integrates real-time movie data through APIs and presents it in a clean, user-friendly interface.</p>
                             <a href="https://sandeepk27.github.io/Movie-Buzz/" target="_blank" class="button button--flex project__button">View Details <i class="uil uil-arrow-right button__icon"></i></a>
                         </div>
                     </div>
-                    <!-- Project Card 5 -->
                     <div class="project__card">
-                        <img src="assets/img/project5.png" alt="Project 5" class="project__img">
+                        <img loading="lazy" decoding="async" src="assets/img/project5.webp" alt="Timse episode time calculator preview" class="project__img">
                         <div class="project__content">
                             <h3 class="project__title">Timse</h3>
                             <p class="project__desc">Timse helps users estimate how much time they’ll need to finish an entire TV series. Whether you're planning a weekend binge or a month-long marathon, Timse gives you the total viewing time based on the number of episodes and episode duration. Built for planners who love TV just as much as their time!</p>
                             <a href="https://sandeepk27.github.io/timse/" target="_blank" class="button button--flex project__button">View Details <i class="uil uil-arrow-right button__icon"></i></a>
                         </div>
                     </div>
-                    <!-- Project Card 6 -->
                     <div class="project__card">
-                        <img src="assets/img/project6.png" alt="Project 6" class="project__img">
+                        <img loading="lazy" decoding="async" src="assets/img/project6.webp" alt="Sudoku game preview" class="project__img">
                         <div class="project__content">
                             <h3 class="project__title">Sudoku</h3>
                             <p class="project__desc">A fully interactive Sudoku game, featuring a clean UI and intelligent solver logic. Users can play puzzles manually or watch the algorithmic solver in action, showcasing backtracking and constraint propagation techniques. This project blends frontend design with core algorithmic problem-solving for an engaging, educational experience.</p>
                             <a href="https://sandeepk27.github.io/Sudoku/" target="_blank" class="button button--flex project__button">View Details <i class="uil uil-arrow-right button__icon"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Build ideas are intentionally labeled as concepts, not completed client or portfolio work. -->
+            <div class="build-lab container">
+                <div class="build-lab__heading">
+                    <span class="project__status"><i class="uil uil-lightbulb-alt"></i> BUILD NEXT</span>
+                    <h3>Data &amp; AI Lab</h3>
+                    <p>Portfolio-ready concepts to build, document and demo end to end.</p>
+                </div>
+                <div class="build-lab__grid">
+                    <article class="build-card">
+                        <span class="build-card__number">01</span><span class="build-card__type">STREAMING · LAKEHOUSE</span>
+                        <h4>Commerce event lakehouse</h4>
+                        <p>Replayable clickstream ingestion, late-event handling, CDC and trusted sales metrics with a small live dashboard.</p>
+                        <div class="build-card__stack"><span>Kafka</span><span>Spark</span><span>Delta Lake</span><span>Airflow</span></div>
+                    </article>
+                    <article class="build-card">
+                        <span class="build-card__number">02</span><span class="build-card__type">GENERATIVE AI · RAG</span>
+                        <h4>Data docs RAG assistant</h4>
+                        <p>Ask questions about pipeline runbooks and data contracts; return grounded answers with document and section citations.</p>
+                        <div class="build-card__stack"><span>Gemini / Vertex AI</span><span>pgvector</span><span>FastAPI</span></div>
+                    </article>
+                    <article class="build-card">
+                        <span class="build-card__number">03</span><span class="build-card__type">AI · DATA OPERATIONS</span>
+                        <h4>Pipeline incident copilot</h4>
+                        <p>Summarize Airflow failures, connect errors to lineage and propose a fix for an engineer to review before action.</p>
+                        <div class="build-card__stack"><span>Airflow</span><span>BigQuery</span><span>LLM with review</span></div>
+                    </article>
+                    <article class="build-card">
+                        <span class="build-card__number">04</span><span class="build-card__type">ANALYTICS · MULTI-CLOUD</span>
+                        <h4>Cloud cost &amp; quality radar</h4>
+                        <p>Bring freshness, test results and query cost into one view, with clear ownership and trend alerts.</p>
+                        <div class="build-card__stack"><span>dbt</span><span>BigQuery</span><span>AWS / Azure</span><span>Streamlit</span></div>
+                    </article>
+                    <article class="build-card">
+                        <span class="build-card__number">05</span><span class="build-card__type">RAG · EVALUATION</span>
+                        <h4>RAG quality workbench</h4>
+                        <p>Compare chunking, embeddings and reranking with a small golden question set, citation checks and retrieval quality metrics.</p>
+                        <div class="build-card__stack"><span>Python</span><span>pgvector</span><span>RAGAS</span><span>Streamlit</span></div>
+                    </article>
+                    <article class="build-card">
+                        <span class="build-card__number">06</span><span class="build-card__type">DATA CONTRACTS · GENAI</span>
+                        <h4>Schema change guardian</h4>
+                        <p>Detect breaking schema changes, summarize downstream impact and draft a data contract update for engineer review.</p>
+                        <div class="build-card__stack"><span>Kafka</span><span>OpenLineage</span><span>Great Expectations</span><span>LLM review</span></div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -513,8 +683,8 @@
             <div class="project__bg">
                 <div class="project__container container grid">
                     <div class="project__data">
-                        <h1 class="project__title">Github<h1>
-                        <p class="project__description">For more upto the minute work, Please visit my Github</p>
+                        <h2 class="project__title">GitHub</h2>
+                        <p class="project__description">Browse the repositories behind my published projects and experiments.</p>
                         <a href="https://github.com/sandeepk27" target="_blank" class="button button--flex button--white">
                             Click Here
                             <i class="uil uil-github-alt project__icon button__icon"></i>
@@ -527,14 +697,26 @@
 
 
         <!--==================== CONTACT ME ====================-->
+        <!-- Services: concise engagement areas for data platform and analytics work. -->
+        <section class="dataprojects section" id="services">
+            <h2 class="section__title">Work with me</h2>
+            <span class="section__subtitle">Services</span>
+            <div class="container dp__grid">
+                <div class="dp__card"><h3 class="dp__title">Pipeline design</h3><p class="dp__text">Batch and streaming architecture with Spark, Kafka, Airflow and cloud services.</p></div>
+                <div class="dp__card"><h3 class="dp__title">BigQuery and dbt</h3><p class="dp__text">Data modelling, cost and performance tuning.</p></div>
+                <div class="dp__card"><h3 class="dp__title">Orchestration</h3><p class="dp__text">Reliable Airflow workflows and monitoring.</p></div>
+            </div>
+        </section>
+
+        <!-- Contact: visible field labels, autofill hints and a clear mail-client handoff. -->
         <section class="contact section" id="contact">
             <h2 class="section__title">Contact</h2>
             <span class="section__subtitle">Let's Chat?</span>
             <div class="contact__container container grid">
-                <div>
+                <div class="contact__details">
                     <div class="contact__information">
                         <i class="uil uil-envelope contact__icon"></i>
-                        <a href="mailto:sandeepkaparthi5869@gmail.com" class="footer__social">
+                        <a href="mailto:sandeepkaparthi27@gmail.com" class="contact__link">
                             <h3 class="contact__title">Email</h3>
                             <span class="contact__subtitle">sandeepkaparthi27@gmail.com</span>
                         </a>
@@ -546,23 +728,29 @@
                             <span class="contact__subtitle">Hyderabad - India</span>
                         </div>
                     </div>
-                </div>
-                <div>
                     <div class="contact__information">
                         <i class="uil uil-github-alt contact__icon"></i>
-                        <a href="https://github.com/sandeepk27" target="_blank" class="footer__social">
+                        <a href="https://github.com/sandeepk27" target="_blank" rel="noopener noreferrer" class="contact__link">
                             <h3 class="contact__title">Github</h3>
-                            <span class="contact__subtitle">@sandeepk27</span>
+                            <span class="contact__subtitle">github.com/sandeepk27</span>
                         </a>
                     </div>
                     <div class="contact__information">
                         <i class="uil uil-linkedin-alt contact__icon"></i>
-                        <a href="https://linkedin.com/in/sandeepk27" target="_blank" class="footer__social">
+                        <a href="https://www.linkedin.com/in/sandeepk27/" target="_blank" rel="noopener noreferrer" class="contact__link">
                             <h3 class="contact__title">Linkedin</h3>
-                            <span class="contact__subtitle">@sandeepk27</span>
+                            <span class="contact__subtitle">linkedin.com/in/sandeepk27</span>
                         </a>
                     </div>
                 </div>
+                <form class="contact__form" id="contact-form">
+                    <div class="contact__form-heading"><span class="contact__form-kicker">START A CONVERSATION</span><h3>Tell me what you’re building</h3><p>I’ll reply by email. Submitting opens your email app.</p></div>
+                    <label class="contact__field"><span class="contact__label">Your name</span><input type="text" name="name" placeholder="e.g. Alex Morgan" autocomplete="name" maxlength="80" class="dp__input" required></label>
+                    <label class="contact__field"><span class="contact__label">Email address</span><input type="email" name="email" placeholder="you@company.com" autocomplete="email" maxlength="120" class="dp__input" required></label>
+                    <label class="contact__field"><span class="contact__label">What would you like to discuss? <span class="contact__optional">Optional</span></span><select name="topic" class="dp__input"><option value="">Choose a topic</option><option>Data platform or pipeline</option><option>Streaming and analytics</option><option>AI / RAG project</option><option>SK Origin Studio freelance work</option><option>Something else</option></select></label>
+                    <label class="contact__field"><span class="contact__label">Project or question</span><textarea name="message" rows="5" maxlength="2000" placeholder="A few details about your project, timeline, or question…" class="dp__input" required></textarea></label>
+                    <div class="contact__form-footer"><span id="contact-status" class="contact__form-note" role="status" aria-live="polite">Your details stay in your email app.</span><button type="submit" class="button button--flex">Prepare email <i class="uil uil-envelope-send button__icon"></i></button></div>
+                </form>
             </div>
         </section>
     </main>
@@ -584,6 +772,12 @@
                     </li>
                     <li>
                         <a href="#qualification" class="footer__link">Experience</a>
+                    </li>
+                    <li>
+                        <a href="#data-projects" class="footer__link">Data Projects</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="footer__link">Projects</a>
                     </li>
                     <li>
                         <a href="#contact" class="footer__link">Contact</a>
@@ -612,7 +806,7 @@
     </footer>
 
     <!--==================== WHATSAPP BUTTON ====================-->
-    <a href="https://api.whatsapp.com/send?phone=7330357797&text=Hello%20Sandeep,%20I%20would%20like%20to%20chat%20with%20you%20regarding%20your%20services." class="whatsapp-button" target="_blank">
+    <a href="https://api.whatsapp.com/send?phone=917330357797&text=Hello%20Sandeep,%20I%20would%20like%20to%20chat%20with%20you%20regarding%20your%20services." class="whatsapp-button" target="_blank">
         <i class="uil uil-whatsapp whatsapp-icon"></i>
     </a>
 

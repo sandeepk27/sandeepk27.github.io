@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sandeepk27.github.io/sitemap.xml

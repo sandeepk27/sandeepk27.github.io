@@ -1,4 +1,4 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
+/* Navigation: keep the mobile drawer keyboard-operable and announce its state. */
 const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
@@ -7,9 +7,18 @@ const navLink = document.querySelectorAll('.nav__link');
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
 if (navToggle) {
-  navToggle.addEventListener('click', () => {
+  const openMenu = () => {
+    if (!navMenu) return;
     navMenu.classList.add('show-menu');
-  })
+    navToggle.setAttribute('aria-expanded', 'true');
+  };
+  navToggle.addEventListener('click', openMenu);
+  navToggle.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openMenu();
+    }
+  });
 }
 
 /*===== MENU HIDDEN =====*/
@@ -17,32 +26,55 @@ if (navToggle) {
 if (navClose) {
   navClose.addEventListener('click', () => {
     navMenu.classList.remove('show-menu');
+    navToggle?.setAttribute('aria-expanded', 'false');
   })
 }
 
 /*==================== REMOVE MENU MOBILE ====================*/
 navLink.forEach(n => n.addEventListener('click', () => {
-  navMenu.classList.remove('show-menu');
+  navMenu?.classList.remove('show-menu');
+  navToggle?.setAttribute('aria-expanded', 'false');
 }));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    navMenu?.classList.remove('show-menu');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  }
+});
 
-/*==================== ACCORDION SKILLS ====================*/
+/* Skills accordion: all groups begin closed; activate a heading to open its group. */
 const skillsContent = document.getElementsByClassName('skills__content');
 const skillsHeader = document.querySelectorAll('.skills__header');
 
 function toggleSkills() {
-  let itemClass = this.parentNode.className;
-
-  for (i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = 'skills__content skills__close';
-  }
-
-  if (itemClass === 'skills__content skills__close') {
-    this.parentNode.className = 'skills__content skills__open';
+  const item = this.closest('.skills__content');
+  const shouldOpen = !item.classList.contains('skills__open');
+  Array.from(skillsContent).forEach(content => {
+    content.classList.remove('skills__open');
+    content.classList.add('skills__close');
+    content.querySelector('.skills__header')?.setAttribute('aria-expanded', 'false');
+  });
+  if (shouldOpen) {
+    item.classList.remove('skills__close');
+    item.classList.add('skills__open');
+    this.setAttribute('aria-expanded', 'true');
   }
 }
 
-skillsHeader.forEach((e) => {
+skillsHeader.forEach((e, index) => {
+  const list = e.closest('.skills__content').querySelector('.skills__list');
+  if (!list.id) list.id = `skills-list-${index + 1}`;
+  e.setAttribute('role', 'button');
+  e.setAttribute('tabindex', '0');
+  e.setAttribute('aria-controls', list.id);
+  e.setAttribute('aria-expanded', e.closest('.skills__content').classList.contains('skills__open') ? 'true' : 'false');
   e.addEventListener('click', toggleSkills);
+  e.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleSkills.call(e);
+    }
+  });
 });
 
 /*==================== QUALIFICATION TABS ====================*/
@@ -91,17 +123,21 @@ function scrollActive(){
     sections.forEach(current =>{
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 50;
-        sectionId = current.getAttribute('id');
+        const sectionId = current.getAttribute('id');
+        const activeLink = document.querySelector(`.nav__menu a[href="#${sectionId}"]`);
+
+        if (!activeLink) return;
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
+            activeLink.classList.add('active-link');
         } else{
-            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
+            activeLink.classList.remove('active-link');
         }
     })
 }
 
 window.addEventListener('scroll', scrollActive);
+scrollActive();
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
@@ -159,3 +195,37 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+/*==================== CONTACT FORM (opens mail client) ====================*/
+const cf = document.getElementById('contact-form');
+if (cf) cf.addEventListener('submit', e => {
+  e.preventDefault();
+  const d = new FormData(cf);
+  const topic = d.get('topic');
+  const topicLine = topic ? `Topic: ${topic}\n\n` : '';
+  const body = `${topicLine}${d.get('message')}\n\n- ${d.get('name')} (${d.get('email')})`;
+  const status = document.getElementById('contact-status');
+  if (status) status.textContent = 'Opening your email app with the message details...';
+  window.location.href = `mailto:sandeepkaparthi27@gmail.com?subject=${encodeURIComponent('Portfolio enquiry from ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+});
+
+/*==================== SCROLL REVEAL ====================*/
+const revealTargets = document.querySelectorAll(
+  '.section__title, .section__subtitle, .about__container, .skills__content, .qualification__data, .dp__card, .project__card, .contact__information, .contact__form'
+);
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealTargets.forEach((element, index) => {
+    element.classList.add('reveal');
+    element.style.setProperty('--reveal-delay', `${(index % 4) * 65}ms`);
+    revealObserver.observe(element);
+  });
+}
